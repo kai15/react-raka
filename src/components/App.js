@@ -8,7 +8,7 @@ import NotifPopup from '../modules/popup/Notif'
 import SearchPopup from '../modules/popup/Search'
 import ProfilePopup from '../modules/popup/Profile'
 import TabNavigator from '../modules/popup/TabNavigator'
-
+import SiswaEdit from '../modules/forms/SiswaEdit'
 // auth
 import Login from './auth/Login'
 
@@ -21,6 +21,7 @@ import Table from './pages/Table'
 import FormBuilder from './pages/FormBuilder'
 import ProgressImage from './pages/ProgressImage'
 import Thumbnail from './pages/Thumbnail'
+
 
 class App extends Component {
 
@@ -166,6 +167,8 @@ class App extends Component {
                 <Route exact path="/form-builder" component={ FormBuilder } />
                 <Route exact path="/progress-image" component={ ProgressImage } />
                 <Route exact path="/thumbnail" component={ Thumbnail } />
+                <Route exact path="/siswas/:id" component={ SiswaEdit } />
+                
 
                 {/* tab navigator */}
                 <Route exact path="/tab-navigator" component={TabNavigator} />
