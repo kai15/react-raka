@@ -10,7 +10,7 @@ import InlineEditing from '../../modules/forms/InlineEditing'
 
 var ct = require("../../modules/custom/customTable")
 
-const reporturl = "http://157.230.245.250:9945/report/";
+const reporturl = "http://localhost:8089/api/report/kelas";
 
 const date = new Date();
 const month = String(date.getMonth());
@@ -55,13 +55,11 @@ class Home extends Component {
   }
 
   async remove(id) {
-    await fetch('/api/v1/kelass/${id}', {
-      method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }).then(() => {
+    fetch('/api/v1/kelass/'+{id}, {
+      method: 'DELETE'
+     
+    })
+    .then(() => {
       let updatedKelas = [...this.state.kelass].filter(i => i.id !== id);
       this.setState({ kelass: updatedKelas });
     });
@@ -137,7 +135,7 @@ class Home extends Component {
         <div className="padding-15px grid grid-2x">
           <div className="col-1">
             <div className="txt-site txt-18 txt-bold txt-main padding-top-5px">
-              Table
+              Table Kelas
             </div>
           </div>
           <div className="col-2 content-right">
@@ -145,7 +143,7 @@ class Home extends Component {
               <i className='fa fa-1x fa-plus'></i>
             </button> */}
             <Button className="btn btn-blue" tag={Link} to="/kelass/new"><i className='fa fa-1x fa-plus'></i></Button>
-            <a rel="noopener noreferrer" target="_blank" href={reporturl + "posto.allocation.report?reportFormat=PDF&period=" + (Number(month) + 1) + "." + year + "&startDate=" + this.state.tanggalAwal + "&endDate=" + this.state.tanggalAkhir}>
+            <a rel="noopener noreferrer" target="_blank" href={reporturl}>
               <button className="btn btn-blue margin-left-10px">
                 Get Report
               </button>

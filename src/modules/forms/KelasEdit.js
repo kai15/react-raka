@@ -6,7 +6,8 @@ import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 class KelasEdit extends Component {
 
     emptyItem = {
-        namaKelas: ''
+        namaKelas: '',
+
     };
 
     constructor(props) {
@@ -68,7 +69,7 @@ class KelasEdit extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Button color="primary" type="submit">Save</Button>{' '}
-                                    <Button color="secondary" tag={Link} to="/table">Cancel</Button>
+                                    <Button color="secondary" tag={Link} to="/home">Cancel</Button>
                                 </FormGroup>
                             </Form>
                         </Container>

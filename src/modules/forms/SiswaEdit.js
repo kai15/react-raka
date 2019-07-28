@@ -38,7 +38,7 @@ class SiswaEdit extends Component {
         event.preventDefault();
         const { item } = this.state;
 
-        await fetch('/api/v1/siswas', {
+        await fetch('/api/v1/siswas/', {
             method: (item.id) ? 'PUT' : 'POST',
             headers: {
                 'Accept': 'application/json',
