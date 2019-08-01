@@ -39,6 +39,7 @@ class Pages extends Component {
       clEditAble: '',
       editAble: false,
       createClass: 'app-popup',
+      // deleteClass: 'app-popup',
       tanggalAkhir,
       tanggalAwal,
       siswas: []
@@ -61,9 +62,18 @@ class Pages extends Component {
         'Content-Type': 'application/json'
       }
     }).then(() => {
-      let updatedSiswa = [...this.state.siswa].filter(i => i.id !== id);
-      this.setState({siswa: updatedSiswa});
+      let updatedSiswa = [...this.state.siswas].filter(i => i.id !== id);
+      this.setState({siswas: updatedSiswa});
     });
+      // .then((response) => response.json())
+      // .then((responseJson) => {
+      //   console.log('User :', responseJson);
+      //   this.setState({ deleteClass: 'app-popup' })
+      //   .then(() => {
+      //     let updatedSiswa = [...this.state.siswa].filter(i => i.id !== id);
+      //     this.setState({siswa: updatedSiswa});})
+      // });
+
   }
 
   opEditAble = () => {
@@ -92,7 +102,7 @@ class Pages extends Component {
     alert('delete');
   }
 
-  
+
 
   // getMuiTheme = () => createMuiTheme(ct.customTable());
 
@@ -196,6 +206,18 @@ class Pages extends Component {
           </table>
         </div>
 
+        {/* <div className={this.state.deleteClass}>
+          <div className="padding-top-20px"></div>
+          <div className="popup-content background-white border-radius">
+            <div className="padding-15px background-blue grid grid-2x">
+              <div className="col-1">
+                <div className="txt-site txt-12 txt-bold post-center">
+                  <h2>Delted</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
         {/* <div className={this.state.createClass}>
           <div className="padding-top-20px"></div>
           <div className="popup-content background-white border-radius">

@@ -19,7 +19,7 @@ class SiswaEdit extends Component {
     }
 
     async componentDidMount() {
-        if (this.props.match.params.id !== 'new') {
+        if (this.props.match.params.id !== 'add') {
         const siswa = await (await fetch(`/api/v1/siswas/${this.props.match.params.id}`)).json();
         this.setState({ item: siswa });
         }
@@ -52,7 +52,8 @@ class SiswaEdit extends Component {
 
     render() {
         const { item } = this.state;
-        const title = <h2>{item.id ? 'Edit Siswa' : 'Add Siswa'}</h2>;
+        const title = <h2>Edit Siswa</h2>
+        // <h2>{item.id ? 'Edit Siswa' : 'Add Siswa'}</h2>;
 
         return <div className="main-content">
 

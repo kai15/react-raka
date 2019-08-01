@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 
 
-class SiswaEdit extends Component {
+class SiswaAdd extends Component {
 
     emptyItem = {
         namaSiswa: ''
@@ -81,4 +81,4 @@ class SiswaEdit extends Component {
     }
 }
 
-export default withRouter(SiswaEdit);
+export default withRouter(SiswaAdd);
