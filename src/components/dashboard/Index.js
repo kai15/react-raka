@@ -55,7 +55,7 @@ class Home extends Component {
   }
 
   async remove(id) {
-    fetch('/api/v1/kelass/'+{id}, {
+    fetch('api/v1/kelass/'+{id}, {
       method: 'DELETE'
      
     })

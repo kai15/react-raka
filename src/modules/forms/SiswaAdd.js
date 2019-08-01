@@ -20,8 +20,8 @@ class SiswaEdit extends Component {
 
     async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
-        const siswa = await (await fetch(`/api/v1/siswas/${this.props.match.params.id}`)).json();
-        this.setState({ item: siswa });
+            const siswa = await (await fetch(`/api/v1/siswas/${this.props.match.params.id}`)).json();
+            this.setState({ item: siswa });
         }
     }
 
@@ -37,10 +37,10 @@ class SiswaEdit extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         const { item } = this.state;
-        await fetch('/api/v1/siswas/' + (item.id), {
-            method: 
+
+        await fetch('/api/v1/siswas/', {
+            method: 'POST',
             // (item.id) ? 'PUT' : 'POST',
-            'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ class SiswaEdit extends Component {
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label for="name">Nama Siswa</Label>
-                                    <Input type="text" name="namaSiswa" id="namaSiswa" value={item.namaSiswa || 'Kosongkan'}
+                                    <Input type="text" name="namaSiswa" id="namaSiswa" value={item.namaSiswa || ''}
                                         onChange={this.handleChange} autoComplete="namaSiswa" />
                                 </FormGroup>
                                 <FormGroup>

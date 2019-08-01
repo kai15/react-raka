@@ -53,18 +53,16 @@ class Pages extends Component {
       .then(data => this.setState({ siswas: data }));
 
   }
-
-  remove(id) {
-    fetch('/api/v1/siswas/'+{id}, {
+  async remove(id) {
+    await fetch(`/api/v1/siswas/${id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    })
-    .then(() => {
-      let updatedSiswa = [...this.state.siswas].filter(i => i.id !== id);
-      this.setState({ siswas: updatedSiswa });
+    }).then(() => {
+      let updatedSiswa = [...this.state.siswa].filter(i => i.id !== id);
+      this.setState({siswa: updatedSiswa});
     });
   }
 
@@ -93,6 +91,8 @@ class Pages extends Component {
   opDeleteAble = () => {
     alert('delete');
   }
+
+  
 
   // getMuiTheme = () => createMuiTheme(ct.customTable());
 
@@ -145,7 +145,7 @@ class Pages extends Component {
             {/* <button className="btn btn-blue" onClick={this.openCreateForm}>
               <i className='fa fa-1x fa-plus'></i>
             </button> */}
-            <Button className="btn btn-blue" tag={Link} to="/siswas/new"><i className='fa fa-1x fa-plus'></i></Button>
+            <Button className="btn btn-blue margin-left-10px" tag={Link} to="/siswas/new"><i className='fa fa-1x fa-plus'></i></Button>
             <a rel="noopener noreferrer" target="_blank" href={reporturl}>
               <button className="btn btn-blue margin-left-10px">
                 Get Report
@@ -174,7 +174,6 @@ class Pages extends Component {
                 <th>Id</th>
                 <th>Nama Siswa</th>
                 <th>Action</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -197,7 +196,7 @@ class Pages extends Component {
           </table>
         </div>
 
-        <div className={this.state.createClass}>
+        {/* <div className={this.state.createClass}>
           <div className="padding-top-20px"></div>
           <div className="popup-content background-white border-radius">
             <div className="padding-15px background-blue grid grid-2x">
@@ -301,7 +300,7 @@ class Pages extends Component {
 
           <div className="padding-bottom-20px"></div>
 
-        </div>
+        </div> */}
 
       </div>
     )

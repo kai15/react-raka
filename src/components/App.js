@@ -9,6 +9,7 @@ import SearchPopup from '../modules/popup/Search'
 import ProfilePopup from '../modules/popup/Profile'
 import TabNavigator from '../modules/popup/TabNavigator'
 import SiswaEdit from '../modules/forms/SiswaEdit'
+import SiswaAdd from '../modules/forms/SiswaAdd'
 import KelasEdit from '../modules/forms/KelasEdit'
 
 // auth
@@ -23,6 +24,7 @@ import Table from './pages/Table'
 import FormBuilder from './pages/FormBuilder'
 import ProgressImage from './pages/ProgressImage'
 import Thumbnail from './pages/Thumbnail'
+
 
 
 class App extends Component {
@@ -170,6 +172,7 @@ class App extends Component {
                 <Route exact path="/progress-image" component={ ProgressImage } />
                 <Route exact path="/thumbnail" component={ Thumbnail } />
                 <Route exact path="/siswas/:id" component={ SiswaEdit } />
+                <Route exact path="/siswas/new" component={ SiswaAdd } />
                 <Route exact path="/kelass/:id" component={ KelasEdit } />
                 
 
