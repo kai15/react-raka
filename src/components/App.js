@@ -11,16 +11,18 @@ import TabNavigator from '../modules/popup/TabNavigator'
 import SiswaEdit from '../modules/forms/SiswaEdit'
 import SiswaAdd from '../modules/forms/SiswaAdd'
 import KelasEdit from '../modules/forms/KelasEdit'
+import KelasAdd from '../modules/forms/KelasAdd'
 
 // auth
 import Login from './auth/Login'
 
 // home
-import Dashboard from './dashboard/Index'
+// import Dashboard from './dashboard/Index'
 
 // pages
 import SweetAlert from './pages/SweetAlert'
 import Table from './pages/Table'
+import TableKelas from './pages/TableKelas'
 import FormBuilder from './pages/FormBuilder'
 import ProgressImage from './pages/ProgressImage'
 import Thumbnail from './pages/Thumbnail'
@@ -165,7 +167,7 @@ class App extends Component {
 
       				<div className="app-place">
       					
-      					<Route exact path="/home" component={ Dashboard } />
+      					<Route exact path="/home" component={ TableKelas } />
                 <Route exact path="/sweet-alert" component={ SweetAlert } />
                 <Route exact path="/table" component={ Table } />
                 <Route exact path="/form-builder" component={ FormBuilder } />
@@ -174,6 +176,7 @@ class App extends Component {
                 <Route exact path="/siswas/:id" component={ SiswaEdit } />
                 <Route exact path="/siswas/new" component={ SiswaAdd } />
                 <Route exact path="/kelass/:id" component={ KelasEdit } />
+                <Route exact path="/kelass/add" component={ KelasAdd } />
                 
 
                 {/* tab navigator */}

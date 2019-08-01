@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 
 
-class KelasEdit extends Component {
+class KelasAdd extends Component {
 
     emptyItem = {
         namaKelas: ''
@@ -19,10 +19,10 @@ class KelasEdit extends Component {
     }
 
     async componentDidMount() {
-        // if (this.props.match.params.id !== 'new') {
+        if (this.props.match.params.id !== 'add') {
             const kelas = await (await fetch(`/api/v1/kelass/${this.props.match.params.id}`)).json();
             this.setState({ item: kelas });
-        // }
+        }
     }
 
     handleChange(event) {
@@ -37,10 +37,10 @@ class KelasEdit extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         const { item } = this.state;
-        await fetch('/api/v1/kelass/' + (item.id), {
-            method:
-                // (item.id) ? 'PUT' : 'POST',
-                'PUT',
+
+        await fetch('/api/v1/kelass/', {
+            method: 'POST',
+            // (item.id) ? 'PUT' : 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -52,8 +52,7 @@ class KelasEdit extends Component {
 
     render() {
         const { item } = this.state;
-        const title = <h2>Edit Kelas</h2>
-        // <h2>{item.id ? 'Edit Kelas' : 'Add Kelas'}</h2>;
+        const title = <h2>{item.id ? 'Edit Kelas' : 'Add Kelas'}</h2>;
 
         return <div className="main-content">
 
@@ -65,7 +64,7 @@ class KelasEdit extends Component {
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label for="name">Nama Kelas</Label>
-                                    <Input type="text" name="namaKelas" id="namaKelas" value={item.namaKelas || 'Kosongkan'}
+                                    <Input type="text" name="namaKelas" id="namaKelas" value={item.namaKelas || ''}
                                         onChange={this.handleChange} autoComplete="namaKelas" />
                                 </FormGroup>
                                 <FormGroup>
@@ -82,4 +81,4 @@ class KelasEdit extends Component {
     }
 }
 
-export default withRouter(KelasEdit);
+export default withRouter(KelasAdd);

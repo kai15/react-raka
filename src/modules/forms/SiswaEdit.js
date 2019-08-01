@@ -19,10 +19,10 @@ class SiswaEdit extends Component {
     }
 
     async componentDidMount() {
-        if (this.props.match.params.id !== 'add') {
-        const siswa = await (await fetch(`/api/v1/siswas/${this.props.match.params.id}`)).json();
-        this.setState({ item: siswa });
-        }
+        // if (this.props.match.params.id !== 'new') {
+            const siswa = await (await fetch(`/api/v1/siswas/${this.props.match.params.id}`)).json();
+            this.setState({ item: siswa });
+        // }
     }
 
     handleChange(event) {
@@ -38,9 +38,9 @@ class SiswaEdit extends Component {
         event.preventDefault();
         const { item } = this.state;
         await fetch('/api/v1/siswas/' + (item.id), {
-            method: 
-            // (item.id) ? 'PUT' : 'POST',
-            'PUT',
+            method:
+                // (item.id) ? 'PUT' : 'POST',
+                'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
