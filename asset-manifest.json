@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-raka/static/css/main.3aeb8986.chunk.css",
+    "main.js": "/react-raka/static/js/main.2a46b106.chunk.js",
+    "main.js.map": "/react-raka/static/js/main.2a46b106.chunk.js.map",
+    "runtime~main.js": "/react-raka/static/js/runtime~main.45bc6839.js",
+    "runtime~main.js.map": "/react-raka/static/js/runtime~main.45bc6839.js.map",
+    "static/js/2.d4f6cceb.chunk.js": "/react-raka/static/js/2.d4f6cceb.chunk.js",
+    "static/js/2.d4f6cceb.chunk.js.map": "/react-raka/static/js/2.d4f6cceb.chunk.js.map",
+    "index.html": "/react-raka/index.html",
+    "precache-manifest.4e62bbaf99d101db6f854deff5ad33cb.js": "/react-raka/precache-manifest.4e62bbaf99d101db6f854deff5ad33cb.js",
+    "service-worker.js": "/react-raka/service-worker.js",
+    "static/css/main.3aeb8986.chunk.css.map": "/react-raka/static/css/main.3aeb8986.chunk.css.map",
+    "static/media/app.css": "/react-raka/static/media/Ubuntu-Regular.6bb9beb4.ttf",
+    "static/media/eksad-logo.jpg": "/react-raka/static/media/eksad-logo.b4c6a609.jpg",
+    "static/media/all.min.css": "/react-raka/static/media/fa-solid-900.fb493903.woff2"
+  }
+}
